@@ -85,11 +85,11 @@ No API calls. No authentication. No server. Just math.
 ## Development
 
 ```bash
-git clone https://github.com/yourusername/linkedin-date-restorer
+git clone https://github.com/yourusername/linkedin-exact-date-restorer
 ```
 
 ```
-linkedin-date-restorer/
+linkedin-exact-date-restorer/
 ├── manifest.json
 ├── popup.html
 ├── src/
