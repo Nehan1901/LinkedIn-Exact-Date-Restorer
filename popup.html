@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LinkedIn Exact Date Restorer</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 14px;
+        width: 280px;
+        height: 150px;
+        box-sizing: border-box;
+        background: #ffffff;
+        color: #1f2328;
+        font: 13px/1.35 Arial, sans-serif;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        height: 100%;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.2;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .label-group {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .label-title {
+        font-weight: 600;
+      }
+
+      .label-hint {
+        color: #57606a;
+        font-size: 12px;
+      }
+
+      select {
+        width: 120px;
+        padding: 4px 8px;
+        border: 1px solid #d0d7de;
+        border-radius: 6px;
+        background: #ffffff;
+        color: #1f2328;
+        font: inherit;
+      }
+
+      .switch {
+        position: relative;
+        width: 42px;
+        height: 24px;
+        flex: 0 0 auto;
+      }
+
+      .switch input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .slider {
+        position: absolute;
+        inset: 0;
+        border-radius: 999px;
+        background: #d0d7de;
+        transition: background-color 0.15s ease;
+      }
+
+      .slider::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #ffffff;
+        box-shadow: 0 1px 2px rgba(31, 35, 40, 0.2);
+        transition: transform 0.15s ease;
+      }
+
+      .switch input:checked + .slider {
+        background: #0a66c2;
+      }
+
+      .switch input:checked + .slider::after {
+        transform: translateX(18px);
+      }
+
+      .switch input:focus-visible + .slider,
+      select:focus-visible {
+        outline: 2px solid #0a66c2;
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>LinkedIn Exact Date Restorer</h1>
+      <div class="row">
+        <div class="label-group">
+          <span class="label-title">Show exact dates</span>
+          <span class="label-hint">Replace LinkedIn relative timestamps.</span>
+        </div>
+        <label class="switch" for="enabled">
+          <input id="enabled" type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="row">
+        <div class="label-group">
+          <label class="label-title" for="format">Date format</label>
+          <span class="label-hint">Choose how dates are displayed.</span>
+        </div>
+        <select id="format">
+          <option value="long">Apr 3, 2025</option>
+          <option value="iso">2025-04-03</option>
+        </select>
+      </div>
+    </main>
+    <script src="src/popup.js"></script>
+  </body>
+</html>

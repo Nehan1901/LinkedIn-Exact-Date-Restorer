@@ -1,0 +1,34 @@
+  {
+    "manifest_version": 3,
+    "name": "LinkedIn Exact Date Restorer",
+    "version": "0.1.0",
+    "description": "Replaces LinkedIn relative timestamps with exact dates.",
+    "permissions": [
+      "storage"
+    ],
+    
+    "host_permissions": [
+      "https://www.linkedin.com/*"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "LinkedIn Exact Date Restorer"
+    },
+    "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.linkedin.com/*"
+        ],
+        "js": [
+          "src/content.js"
+        ],
+        "run_at": "document_idle",
+        "world": "ISOLATED"
+      }
+    ]
+  }
