@@ -2,7 +2,10 @@
 
 > Replaces LinkedIn's vague relative timestamps with exact dates — instantly, everywhere, no login required.
 
+### Before
 ![Before](screenshot_before.png)
+
+### After
 ![After](screenshot_after.png)
 
 ---
